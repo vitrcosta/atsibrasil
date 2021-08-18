@@ -1,0 +1,45 @@
+<div id="noticias" class="respmenu" style="padding-top: 110px;position: absolute;width: 100%;margin-top: -110px;z-index: -1;"></div>
+<% if @noticias.size > 0 %>
+<section id="novidades">
+  <div class="containermod">
+    <div class="row edtrow">
+
+      <div class="col-lg-12 nopadding left_about">
+        <div class="col-12 nopadding">
+          <p class="cartola_pirilampo"><%= image_tag 'indication.svg', :class=>'indi_general', :alt=>'icon' %> NOVIDADES</p>
+          <h2 class="cartola_titulo" style="padding-bottom: 0px !important;"><span style="font-family: MontserratRegular !important;">Notícias</span> e<br>Publicações</h2>
+
+          <div class="col-6 nopadding icons_redes_noticia">
+            <a href="" target="_blank"> <div class="fb_circulo_svg"></div></a>
+            <a href="" target="_blank"> <div class="insta_circulo_svg"></div></a>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="col-lg-12 nopadding second_novidades">
+        <div class="row edtrow">
+
+          <% @noticias.each do |noticia| %>
+
+          <div class="cards_noticias col-12 col-sm-6 col-md-6 col-lg-4">
+            <a href="<%=noticia_path(noticia)%>" class="cards_internos_noticia">
+              <p class="pluss_triangulo">+</p>
+              <div class="triangulo_hover"></div>
+              <div class="img_noticia_card" style="background-color: #a9d8d0;">
+                <!-- <p class="txt_hover_box">VEJA MAIS</p> -->
+                <div class="img_noticia_card img_defned_opc" style="background-image: url('<%= noticia.foto_principal.url %>');"></div>
+              </div>
+              <p><%= truncate(noticia.titulo, :length => 120, :omission => '...') %></p>
+            </a>
+          </div>
+
+          <% end %>
+
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+  <a href="/novidades" class="click_scroll bot_saibamais" style="color: #3d507f !important;margin-top: 30px;margin-left: calc(50% - 126px);">MAIS NOVIDADES</a>
+</section>

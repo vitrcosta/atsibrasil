@@ -1,0 +1,51 @@
+<%= render 'capa/menu' %>
+<section class="servico-title" data-parallax="scroll" data-image-src="/img/topo-interno.jpg">
+  <div class="container">
+    <h1>NOVIDADES</h1>
+  </div>
+</section>
+<section class="novidade-content-int">
+  <div class="container">
+    <div class="row justify-content-between">
+      <div class="col-lg-4 p0">
+        <div class="cartola">
+          <h6>ARTIGOS TÉCNICOS</h6>
+          <h3><b><%= @noticia.titulo %></b></h3>
+          <% unless @noticia.foto_principal.url == "/foto_principals/original/missing.png" %>
+          <div style="position:relative;" class="rover-int">
+            <a href="<%= @noticia.foto_principal.url %>" data-fancybox="galeria"><%= image_tag @noticia.foto_principal.url, :class => "img-int" %>
+              <div class="hover-img">
+                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                width="43.062px" height="42.892px" viewBox="0 0 43.062 42.892" enable-background="new 0 0 43.062 42.892" xml:space="preserve">
+                <g>
+                  <path fill="#FFFFFF" d="M1.693,41.164V25.498c0-0.461-0.373-0.834-0.833-0.834c-0.461,0.001-0.833,0.373-0.833,0.834v16.499
+                  c0,0.461,0.372,0.834,0.834,0.834h16.498c0.23,0,0.439-0.094,0.59-0.244s0.244-0.359,0.244-0.59c0-0.461-0.373-0.832-0.834-0.832
+                  H1.693z"/>
+                  <path fill="#FFFFFF" d="M42.229,0L25.729,0c-0.461,0-0.833,0.373-0.834,0.834c0.001,0.46,0.373,0.833,0.833,0.833l15.667,0v15.667
+                  c0,0.46,0.372,0.832,0.833,0.833c0.229-0.001,0.438-0.094,0.589-0.244c0.151-0.15,0.244-0.36,0.245-0.59V0.834
+                  C43.062,0.373,42.689,0,42.229,0z"/>
+                </g>
+              </svg>
+            </div>
+          </a>
+          </div>
+          <% end %>
+          <!-- Go to www.addthis.com/dashboard to customize your tools -->
+          <div class="addthis_inline_share_toolbox_ls00"></div>
+      </div>
+    </div>
+    <div class="col-lg-7 p0 nov-conteudo">
+      <h3 class="nov-subtitulo"><%= @noticia.subtitulo %></h3>
+      <p><%= @noticia.descricao.html_safe %></p>
+    </div>
+  </div>
+</div>
+</section>
+<!-- <section id="parallax" data-parallax="scroll" data-image-src="/img/parallax_consultoria_especializada.jpg">
+  <div class="container" style="position: relative;height:100%;">
+    <%# image_tag 'parallax.svg' %>
+  </div>
+</section> -->
+<%= render 'capa/formularioerodape' %>
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-550aba291ec67aff"></script>

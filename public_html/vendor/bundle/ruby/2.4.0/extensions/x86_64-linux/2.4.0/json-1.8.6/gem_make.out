@@ -1,0 +1,14 @@
+current directory: /home/daniellepaixao/public_html/vendor/bundle/ruby/2.4.0/gems/json-1.8.6/ext/json
+/opt/cpanel/ea-ruby24/root/usr/bin/ruby -r ./siteconf20190729-9719-58tq4v.rb extconf.rb 
+creating Makefile
+
+current directory: /home/daniellepaixao/public_html/vendor/bundle/ruby/2.4.0/gems/json-1.8.6/ext/json
+make "DESTDIR=" clean
+rm -f   *.o  *.bak mkmf.log .*.time
+
+current directory: /home/daniellepaixao/public_html/vendor/bundle/ruby/2.4.0/gems/json-1.8.6/ext/json
+make "DESTDIR="
+make: Nada a ser feito para `all'.
+
+current directory: /home/daniellepaixao/public_html/vendor/bundle/ruby/2.4.0/gems/json-1.8.6/ext/json
+make "DESTDIR=" install

@@ -1,0 +1,47 @@
+<%= render 'capa/menuinterno' %>
+<section class="publicacoes-content-int">
+    <div class="parallax-publicacoes" data-parallax="scroll" data-image-src="/img/entomologia.jpg">
+      <div class="container">
+        <h1>ENTOMOLOGIA</h1>
+      </div>
+    </div>
+    <div class="container publicacoes">
+    <% unless @entomologia.nil? %>
+    <% @entomologia.each do |f| %>
+    <p><%= f.descricao.html_safe %></p>
+    <% end %>
+    <% end %>
+    </div>
+    <div class="parallax-publicacoes" data-parallax="scroll" data-image-src="/img/herbologia.jpg">
+      <div class="container">
+        <h1>HERBOLOGIA</h1>
+      </div>
+    </div>
+    <div class="container publicacoes">
+    <% @herbologia.each do |f| %>
+      <% @herbologia.each do |f| %>
+      <p><%= f.descricao.html_safe %></p>
+      <% end %>
+     <% end %>
+    </div>
+    <div class="parallax-publicacoes" data-parallax="scroll" data-image-src="/img/agronomia.jpg">
+      <div class="container">
+        <h1>AGRONOMIA</h1>
+      </div>
+    </div>
+    <div class="container publicacoes">
+    <% @agronomia.each do |f| %>
+      <% @agronomia.each do |f| %>
+      <p><%= f.descricao.html_safe %></p>
+      <% end %>>
+     <% end %>>
+    </div>
+</section>
+<!-- <section id="parallax" data-parallax="scroll" data-image-src="/img/parallax_consultoria_especializada.jpg">
+  <div class="container" style="position: relative;height:100%;">
+    <%# image_tag 'parallax.svg' %>
+  </div>
+</section> -->
+<%= render 'capa/formularioerodape' %>
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-550aba291ec67aff"></script>

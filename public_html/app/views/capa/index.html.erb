@@ -1,0 +1,26 @@
+<!-- Folheto -->
+<% unless @folheto.nil? %>
+<% unless @folheto.imagem_folheto.blank? %>
+<a data-toggle="lightbox" id="reference-first" href="<%= @folheto.imagem_folheto.url(:original) %>" style="display: none;"></a>
+<% end %>
+<% unless @folheto.link_video.blank? %>
+<a data-toggle="lightbox" id="reference-first" href="https://www.youtube.com/embed/<%= @folheto.link_video %>?autoplay=1&rel=0&modestbranding=0&showinfo=0&controls=0"> </a>
+<% end %>
+<% end %>
+<!-- Folheto End-->
+
+<%= render 'menu' %>
+
+<%= render 'topo' %>
+
+<%= render 'institucional' %>
+
+<%= render 'servicos' %>
+
+<%= render 'diferenciais' %>
+
+<%= render 'parallax' %>
+
+<%= render 'artigos' %>
+
+<%= render 'formularioerodape' %>

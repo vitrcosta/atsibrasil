@@ -1,0 +1,31 @@
+<%= form_for @interesse ||= Interesse.new, :url => 'interesse' do |f| %>
+
+<%= f.text_field :nome, {:required => "", :type => 'text'} %><span class="highlight"></span><label>NOME</label>
+
+<%= f.text_field :email, {:required => "", :type => 'email'} %><span class="highlight"></span><label>E-MAIL</label>
+
+<%= f.text_field :telefone, {:required => "", :type => 'tel'} %><span class="highlight"></span><label>TELEFONE</label>
+
+<%= f.text_area :interesse, {:id => "interesseid"} %><span class="highlight"></span><label>INTERESSE</label>
+
+<%= f.text_area :mensagem, {:required => "", :id => "preform"} %><span class="highlight h_2"></span><label>MENSAGEM</label>
+
+
+<%# recaptcha_tags %>
+<button id="sendMessage" class="bot_saibamais" name="sendMessage" type="submit" style="cursor: pointer;" name="button">ENVIAR</button>
+<% end %>
+
+
+
+<% if $teste == true %>
+<div class="alert alert-success" role="alert">
+  <p class="pform">Mensagem enviada com sucesso!</p>
+</div>
+<% $teste = false %>
+<% end %>
+<% if $testeerro == true %>
+<div class="alert alert-danger" role="alert" style="text-align: center;height: 28px;">
+  <p class="pform">Mensagem não enviada, verifique o recaptcha!</p>
+</div>
+<% $testeerro = false %>
+<% end %>

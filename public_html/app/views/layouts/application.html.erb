@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta name="google-site-verification" content="UyifRwKJJ4aUbpibQgzBBJRZ_aIIfTB43mJnh_8VEXg" />
+  <meta http-equiv="Content-Language" content="pt-br">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <%= display_meta_tags %>
+  <%= favicon_link_tag '/favicon.svg' %>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css" />
+  <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBS4qCbpNx4V8xrNTpSiEyhXJJ4VU8cTWo"></script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-203709793-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-203709793-1');
+  </script>
+</head>
+<body onload="initialize()">
+  <%= flash[:error] %>
+  <%= yield %>
+  <!-- <a href="https://api.whatsapp.com/send?phone=" target="_blank"><div class="wppbt">
+    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+    viewBox="0 0 507.8 507.8" style="enable-background:new 0 0 507.8 507.8;" xml:space="preserve">
+    <path d="M253.9,0C113.7,0,0,113.7,0,253.9s113.7,253.9,253.9,253.9h253.7l0.2-253.9C507.8,113.7,394.1,0,253.9,0z M409.1,309.7
+    c0,6.6-5.4,12-12,12H239.8c-6.6,0-12-5.4-12-12v-6.8c0-6.6,5.4-12,12-12h157.3c6.6,0,12,5.4,12,12V309.7z M409.1,239.2
+    c0,6.6-5.4,12-12,12H157c-6.6,0-12-5.4-12-12v-6.8c0-6.6,5.4-12,12-12h240.1c6.6,0,12,5.4,12,12V239.2z"/>
+  </svg>
+  WhatsApp
+  </div></a> -->
+<!-- ----------------Folheto----------------------- -->
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $("#reference-first").fancybox({
+        'titlePosition' : 'inside',
+        'transitionIn' : 'fade',
+        'transitionOut' : 'fade',
+        'overlayColor' : '#333',
+        'overlayOpacity' : 0.9,
+        'width': 640,
+        'height': 360
+      }).trigger("click");
+
+      window.setTimeout('$("#reference-first")', 5000);
+      $('.fancybox').fancybox();
+    });
+  </script>
+<!-- ----------------SCROLL ANIMATION----------------------- -->
+
+  <!-- ----------------SCROLL ANIMATION----------------------- -->
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('.slider').slick({
+        autoplay: true,
+        arrows: false
+      });
+    });
+
+    $('.click_scroll').on('click', function(event) {
+      var target = $(this.getAttribute('href'));
+      if( target.length ) {
+        event.preventDefault();
+        $('html, body').stop().animate({
+          scrollTop: target.offset().top- $('#topo-fixado').height()
+        }, 1000);
+      }
+    });
+
+  </script>
+  <!-- ----------------SCROLL ANIMATION----------------------- -->
+
+  <!-- ----------------SCRIPT MENU----------------------- -->
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('.open-menu').on('click', function() {
+        $('.overlay').addClass('open');
+      });
+
+      $('.close-menu').on('click', function() {
+        $('.overlay').removeClass('open');
+      });
+
+      $('.click_scroll').on('click', function() {
+        $('.overlay').removeClass('open');
+      });
+
+      $('.overlay').on('click', function() {
+        $('.overlay').removeClass('open');
+      });
+    });
+  </script>
+  <!-- ----------------SCRIPT MENU END----------------------- -->
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('.slider-artigos').not('.slick-initialized').slick({
+        appendArrows: '.slider-arrows',
+        prevArrow:"<div class='control-c prev'><img src='/img/arrow.svg' style='transform: rotate(180deg);'></div>",
+        nextArrow:"<div class='control-c next'><img src='/img/arrow.svg'></div>",
+        infinite: false,
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        responsive: [
+        {
+          breakpoint: 750,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2,
+            infinite: false
+          }
+        },
+        {
+          breakpoint: 751,
+          settings:{
+            slidesToShow: 2,
+            slidesToScroll: 2,
+            infinite: false
+          }
+        }
+        ]
+      });
+    });
+  </script>
+  <script scr="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/js/fontawesome.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
+</body>
+</html>

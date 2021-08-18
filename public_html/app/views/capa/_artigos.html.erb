@@ -1,0 +1,33 @@
+<section id="artigos">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 col-md-10 cartola">
+        <h6>ARTIGOS</h6>
+        <h3>Acompanhe nossas <b>publicações</b> sobre Agricultura, Ciência, Tecnologia e Inovação!<i class="fas fa-angle-right"></i></h3>
+      </div>
+    </div>
+    </div>
+    <div class="container" style="position: relative;">
+      <div class="slider-arrows">
+
+      </div>
+      <div class="row slider-artigos">
+        <% @noticias.each do |f| %>
+        <div class="col-sm col-lg-4 nopadding">
+          <div class="artigo">
+            <a href="<%= artigo_path(f) %>">
+              <div class="img-div">
+                <div class="img-artigo" <% unless f.foto_principal.nil? %>style="background-image: url(<%= f.foto_principal.url %>)"><% end %></div>
+              </div>
+              <div class="nov-info">
+                <p class="data-desktop"><%= I18n.l(f.data, :format => :long) %></p>
+                <p class="data-mobile"><%= I18n.l(f.data, :format => :default) %></p>
+                <h4><%= truncate(f.titulo, :length => 65, :omission => '...') %></h4>
+              </div>
+            </a>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+</section>

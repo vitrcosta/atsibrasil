@@ -1,0 +1,40 @@
+<%= render 'capa/menu' %>
+<section class="servico-title" data-parallax="scroll" data-image-src="/img/topo-interno.jpg">
+  <div class="container">
+    <h1>PUBLICAÇÕES</h1>
+  </div>
+</section>
+<section class="publicacoes-content-int">
+    <div class="parallax-publicacoes" data-parallax="scroll" data-image-src="/img/parallax.jpg">
+      <div class="container">
+        <h3>HERBOLOGIA</h3>
+      </div>
+    </div>
+    <% @blabla.each do |f| %>
+    <p><%= f.descricao%></p>
+    <% end %>
+    <div class="parallax-publicacoes" data-parallax="scroll" data-image-src="/img/parallax.jpg">
+      <div class="container">
+        <h3>ENTOMOLOGIA</h3>
+      </div>
+    </div>
+    <% @blabla.each do |f| %>
+    <p><%= f.descricao%></p>
+    <% end %>
+    <div class="parallax-publicacoes" data-parallax="scroll" data-image-src="/img/parallax.jpg">
+      <div class="container">
+        <h3>AGRONOMIA</h3>
+      </div>
+    </div>
+    <% @blabla.each do |f| %>
+    <p><%= f.descricao%></p>
+    <% end %>
+</section>
+<!-- <section id="parallax" data-parallax="scroll" data-image-src="/img/parallax_consultoria_especializada.jpg">
+  <div class="container" style="position: relative;height:100%;">
+    <%# image_tag 'parallax.svg' %>
+  </div>
+</section> -->
+<%= render 'capa/formularioerodape' %>
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-550aba291ec67aff"></script>

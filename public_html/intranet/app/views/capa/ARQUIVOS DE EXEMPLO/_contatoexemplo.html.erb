@@ -1,0 +1,74 @@
+<div id="entre_em_contato" class="respmenu" style="padding-top: 110px;position: absolute;width: 100%;margin-top: -110px;z-index: -1;"></div>
+<section id="contato">
+  <div class="contatoimg" style="background-image: url('../img/bottomimg2.jpg');">
+    <h2 class="contatoimg_txt">Atendimento Médico especializado em <span style="font-family: MontserratItalic;font-weight: bold;">Endocrinologia</span> e <span style="font-family: MontserratItalic;font-weight: bold;">Metabologia,</span> com foco principal em <span style="font-family: MontserratItalic;font-weight: bold;">Diabetes Mellitus</span> e <span style="font-family: MontserratItalic;font-weight: bold;">Doenças Tireoidianas</span></h2>
+  </div>
+
+
+  <div class="formcont" id="contato_site">
+    <div class="row edtrow">
+
+      <div class="left_contato_agrupation col-lg-4 nopadding">
+        <p class="cartola_pirilampo cartola_pirilampo_contact" style="color:white;"><%= image_tag 'indication.svg', :class=>'indi_general', :alt=>'icon' %> FALE CONOSCO</p>
+        <h2 class="cartola_titulo" style="color:white;">e descubra<br>como podemos<br><span style="font-family: MontserratRegular !important;">ajudá-los!</span></h2>
+      </div>
+
+      <div id="entrar_em_contato" class="right_contato_agrupation col-lg-8 nopadding">
+        <%= form_for @interesse ||= Interesse.new, :url => 'interesse' do |f| %>
+        <div class="row" style="padding: 0px;margin: 0px;">
+          <div class="col-lg-12" style="padding: 0px;margin: 0px;">
+            <div class="group">
+              <%= f.text_field :nome, {:required => "", :type => 'text'} %><span class="highlight"></span><label>NOME</label>
+            </div>
+            <div class="group">
+              <%= f.text_field :email, {:required => "", :type => 'email'} %><span class="highlight"></span><label>E-MAIL</label>
+            </div>
+            <div class="group">
+              <%= f.text_field :telefone, {:required => "", :type => 'tel'} %><span class="highlight"></span><label>TELEFONE</label>
+            </div>
+            <div class="group" style="visibility: hidden; position: absolute; z-index: -2;">
+              <%= f.text_area :interesse, {:id => "interesseid"} %><span class="highlight"></span><label>INTERESSE</label>
+            </div>
+          </div>
+          <div class="col-lg-12" style="padding: 0px;margin: 0px;">
+            <div class="group">
+              <%= f.text_area :mensagem, {:required => "", :id => "preform"} %><span class="highlight h_2"></span><label>MENSAGEM</label>
+            </div>
+            <div class="row" style="padding: 0px !important;">
+              <div class="col-12 col-sm-12 col-md-12 col-lg-12" style="padding:0px !important;">
+                <div class="row" style="margin: 0px 0px 0px 15px !important;">
+
+                  <div class="col-sm-12 col-md-6 col-lg-6 recaptcha_div" style="padding: 0px !important;">
+                    <%= recaptcha_tags %>
+                  </div>
+
+                  <div class="col-sm-12 col-md-6 col-lg-6 bot_div" style="padding: 0px !important;">
+                    <button id="sendMessage" class="bot_saibamais" name="sendMessage" type="submit" style="cursor: pointer;" name="button">ENVIAR</button>
+                  </div>
+                </div>
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <% end %>
+        <% if $teste == true %>
+        <div class="alert alert-success" role="alert">
+          <p class="pform">Mensagem enviada com sucesso!</p>
+        </div>
+        <% $teste = false %>
+        <% end %>
+        <% if $testeerro == true %>
+        <div class="alert alert-danger" role="alert" style="text-align: center;height: 28px;">
+          <p class="pform">Mensagem não enviada, verifique o recaptcha!</p>
+        </div>
+        <% $testeerro = false %>
+        <% end %>
+
+      </div>
+
+    </div>
+  </div>
+
+</section>

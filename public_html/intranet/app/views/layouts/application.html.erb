@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta name="google-site-verification" content="UyifRwKJJ4aUbpibQgzBBJRZ_aIIfTB43mJnh_8VEXg" />
+  <meta http-equiv="Content-Language" content="pt-br">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <%= display_meta_tags %>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css" />
+</head>
+<body>
+
+  <%= yield %>
+
+<!-- ----------------Folheto----------------------- -->
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $("#reference-first").fancybox({
+        'titlePosition' : 'inside',
+        'transitionIn' : 'fade',
+        'transitionOut' : 'fade',
+        'overlayColor' : '#333',
+        'overlayOpacity' : 0.9,
+        'width': 640,
+        'height': 360
+      }).trigger("click");
+
+      window.setTimeout('$("#reference-first")', 5000);
+      $('.fancybox').fancybox();
+    });
+  </script>
+<!-- ----------------SCROLL ANIMATION----------------------- -->
+
+  <!-- ----------------SCROLL ANIMATION----------------------- -->
+  <script type="text/javascript">
+    $('.click_scroll').on('click', function(event) {
+      var target = $(this.getAttribute('href'));
+      if( target.length ) {
+        event.preventDefault();
+        $('html, body').stop().animate({
+          scrollTop: target.offset().top
+        }, 1000);
+      }
+    });
+  </script>
+  <!-- ----------------SCROLL ANIMATION----------------------- -->
+
+  <!-- ----------------SCRIPT MENU----------------------- -->
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('.open-menu').on('click', function() {
+        $('.overlay').addClass('open');
+      });
+
+      $('.close-menu').on('click', function() {
+        $('.overlay').removeClass('open');
+      });
+
+      $('.click_scroll').on('click', function() {
+        $('.overlay').removeClass('open');
+      });
+
+      $('.overlay').on('click', function() {
+        $('.overlay').removeClass('open');
+      });
+    });
+  </script>
+  <!-- ----------------SCRIPT MENU END----------------------- -->
+
+
+  <script scr="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/js/fontawesome.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
+</body>
+</html>

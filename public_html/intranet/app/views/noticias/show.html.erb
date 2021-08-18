@@ -1,0 +1,5 @@
+
+    <%= truncate(@noticia.titulo, :length => 9999, :omission => '...') %>
+    <%= @noticia.subtitulo %>
+    <%= @noticia.foto_principal.url %>
+    <%= @noticia.descricao.html_safe %>

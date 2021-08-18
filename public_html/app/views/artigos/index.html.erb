@@ -1,0 +1,5 @@
+<% @noticias.each do |noticia| %>
+<a href="<%=noticia_path(noticia)%>">LINK</a>
+<%= noticia.foto_principal.url %>
+<%= truncate(noticia.titulo, :length => 120, :omission => '...') %>
+<% end %>

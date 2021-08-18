@@ -1,0 +1,10 @@
+/usr/local/rvm/rubies/ruby-2.1.3/bin/ruby -r ./siteconf20190801-17584-1mrg7rd.rb extconf.rb
+creating Makefile
+
+make "DESTDIR=" clean
+
+make "DESTDIR="
+make: Nada a ser feito para `all'.
+
+make "DESTDIR=" install
+installing default libraries

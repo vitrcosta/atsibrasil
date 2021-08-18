@@ -1,0 +1,25 @@
+<!-- Folheto -->
+<% unless @folheto.nil? %>
+<% unless @folheto.imagem_folheto.blank? %>
+<a data-toggle="lightbox" id="reference-first" href="<%= @folheto.imagem_folheto.url(:original) %>" style="display: none;"></a>
+<% end %>
+<% unless @folheto.link_video.blank? %>
+<a data-toggle="lightbox" id="reference-first" href="https://www.youtube.com/embed/<%= @folheto.link_video %>?autoplay=1&rel=0&modestbranding=0&showinfo=0&controls=0"> </a>
+<% end %>
+<% end %>
+<!-- Folheto End-->
+
+<%= render 'menutopo' %>
+<div style="margin-top: 120px;">
+  <%= render 'formcontatointerece' %>
+</div>
+<div style="margin-top: 120px;">
+  <p>Este é o projeto base da Criativitta Web Studio, tudo esta funcionando corretamente no ambiente de produção.</p>
+  <p>Lembres-se de sempre que adicionar uma nova Gem, vercionala no .lock</p>
+  <p>Não tenha medo de atulizar os scripts, se por algum motivo não funcionar basta entrar no cdnjs e procurar uma versão compativel.</p>
+  <p>Use ../img/imagem.jpg para puxar as imagens que estão no caminho do public</p>
+  <p>Use img/imagem.img para puxar as imagens que estão no caminho do app/assets</p>
+  <p>Para facilitar a manutenção, divida a pagina por section, que deve ficar em arquivos separados para puxar no render (_section.html.erb)</p>
+  <p>Neste projeto, já coloquei um menu funcional para o mobile e o pc. Se precisar editar, basta alterar o css.</p>
+  <p>O formularia presente está configurado para funcionar com o interesse. Ele envia o e-mail e salva na intra o nome do cliente.</p>
+</div>
